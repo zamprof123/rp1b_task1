@@ -1,3 +1,4 @@
+#mansi
 #counting DNA nucleotides
 
 class DNAString(str):
