@@ -1,8 +1,17 @@
 """
+one, two, three- three nucleotides!! - Nucleotide Counter
+
+input: nucleotide sequence, single sequence ONLY
+output:nucleotide counts, in the order ACGT
+
 TO DO:
 WRAP INTO FUNCTION done
 CLEAN UP VARS done
 ADD FILE READING/ERROR HANDLING
+
+you might notice the answer prints twice, this is because i have both a single-line answer,
+and a method that allows you to change the number of nucleotides you're counting- why would you ever want to do that? god only knows,
+but i implemented it.
 """
 
 
@@ -34,22 +43,19 @@ def extractSEQ(file_path): # i really should be making a separate py file with t
 
 nucleotides = (["A","C","G","T"]) #theres not much reason for this to change but if you want to, you can.
 def seq_count(seq):
-    #list formed, just need to figure out how to count occurancces- perhaps this should be a string?
-    #setup dict for uppercase ascii // this wasnt right initially, we only want to check for residues that are relevant - using ascii lets you do the whole dict at once
+
     occ = {i:0 for i in nucleotides} #useful but of code that sets up a dictionary with a key of 0- highly modular, use in future.
     for i in seq: #cycle through all letters in the sequence
         if i in occ: #if the letter is in the dictionary we set up...
             occ[i] += 1 #increment the value by one
 
-    # for key, value in dict.items(occ): #go to method of dumping dictionary info in a clean way.
-    #     print (key, value) not applicable for the question at hand
     vlist = list(occ.values())
     return vlist
 
-file_path = "cntest.txt"
+file_path = "(counting nucleotides) Example File.txt"
 seq = extractSEQ(file_path)
 vlist = seq_count(seq)
-#print(' '.join(str(value) for value in vlist)) #1 CONVERT VALUES TO STRING (STRVALUE FOR VALUE IN VLIST) 2#JOIN ALL STR VALUES WITH A SPACE " ".JOIN #3 PRINT ALL
+print(" ",' '.join(str(value) for value in vlist)) #1 CONVERT VALUES TO STRING (STRVALUE FOR VALUE IN VLIST) 2#JOIN ALL STR VALUES WITH A SPACE " ".JOIN #3 PRINT ALL
 
 print("\n" + str(seq.count("A")), seq.count("C"), seq.count("G"), seq.count("T")) #you can do this in one line -NOT A SCALEABLE APPROACH, WORKS WELL FOR TRANSCRIPTS THOUGH
 

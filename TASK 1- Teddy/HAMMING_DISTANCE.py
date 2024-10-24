@@ -1,4 +1,9 @@
 """
+Point mutations by any other name are just as , point mutatation-y.
+
+input:two sequences, each on their own line.
+output:the number of point mutations (differences) between each sequence
+
 amusingly this took me far longer to do than i'd like to admit- almost instantly after solving it i realized you could solve this problem
 in a handful of lines. Heres the better of the two solutions.
 

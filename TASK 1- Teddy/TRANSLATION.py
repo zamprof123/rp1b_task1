@@ -1,8 +1,15 @@
 """
+a lesson in making unreasonably large tables
+
+input: a single nucleotide sequence
+output: translated protein sequence
+
 CLEAN VARS done
 ADD FILE READING done
 ADD ERROR HANDLING done
 COMMENT done
+
+i think i could've done this with a map.
 """
 
 def extractSEQ(file_path): # i really should be making a separate py file with these file parsers as modules i can just call but A: i'm lazy, B: i dont really want to juggle multiple files when stuffs this small
