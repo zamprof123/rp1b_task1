@@ -1,0 +1,76 @@
+1.	Variables and Some Arithmetic.
+CODE:
+a = 941
+b = 868
+hypotenuse = a**2 + b**2
+
+print (hypotenuse)
+
+ANSWER:
+1638905
+
+2.	Strings and Lists.
+CODE:
+result=["g9cGB7EII86GmFqzrpXHwCL1Boigau8AkUMhBDqowIPFoHhusYQGWBQUdR7tlTD18VO704G5OsINzkAzvt3AP2jf9mMOWXVzOJuoGJMJmseX7timidusLB2GV9kxLX6wZqPTVNa9lJ6JyWgHOJyrKas8oeQoF9ctdJxTzgW."]
+a = 24
+b = 28
+c = 109
+d = 115
+first_slice = result[0] [a:b+1]
+second_slice = result[0] [c:d+1]
+final_result = first_slice+" "+second_slice
+
+print(final_result)
+
+ANSWER:
+Boiga timidus
+
+3.	Conditions and Loops.
+CODE:
+a = 4957 
+b = 9553
+odd_sum = 0 
+for number in range (a, b+1):
+    if number % 2 == 1:
+        odd_sum += number
+print(odd_sum)    
+
+ANSWER:
+16679245
+
+4.	Working with Files.
+CODE:
+outputFile = []
+
+with open ('rosalind/input.txt', 'r') as f:
+    outputFile = [line for pos, line in enumerate (f. readlines()) if pos % 2 != 0]
+   
+    
+    with open ('rosalind/out.txt', 'w') as f:
+        f.write (''.join ([line for line in outputFile]))
+
+ANSWER:
+Some things in life are bad, they can really make you mad
+Other things just make you swear and curse
+When you're chewing on life's gristle, don't grumble give a whistle
+This will help things turn out for the best
+Always look on the bright side of life
+Always look on the right side of life
+If life seems jolly rotten, there's something you've forgotten
+And that's to laugh and smile and dance and sing
+When you're feeling in the dumps, don't be silly, chumps
+Just purse your lips and whistle, that's the thing
+So, always look on the bright side of death
+Just before you draw your terminal breath
+Life's a counterfeit and when you look at it
+Life's a laugh and death's the joke, it's true
+You see, it's all a show, keep them laughing as you go
+Just remember the last laugh is on you
+Always look on the bright side of life
+And always look on the right side of life
+Always look on the bright side of life
+And always look on the right side of life
+
+    
+
+
