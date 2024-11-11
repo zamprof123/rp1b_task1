@@ -1,0 +1,49 @@
+1.Variables and Some Arithmetic
+
+a = 941
+b = 868 
+hypotenuse = a**2 + b**2 
+print(hypotenuse)
+
+1638905
+
+2. Strings and Lists
+
+result = ["WxXKbWIsobyhsA1UcUrijNm7V40wkvZuEy1KKanWlbpf1SI5mr6euyNeolycaenaBVj3OhJiPd97XW6or28dnCW9A0jAnuJaOi7aDJXeVh1JrMzvIyFnKoUSBh0tXVMgEnfKTRZJSS2KQK4cFi7cOswRqcSOERNexanthematicus8UNlj2cgpO0Sxg."]
+a = 54
+b = 63
+c = 159
+d = 172
+first_slice = result[0][a:b+1]
+second_slice = result[0][c:d+1]
+final_result = first_slice +" "+ second_slice
+print(final_result)
+
+Neolycaena exanthematicus
+
+3. Conditions and Loops
+
+a = 4665
+b = 9491
+odd_sum = 0 
+for number in range (a, b+1):
+    if number % 2 == 1:
+        odd_sum +=number
+        
+print(odd_sum)
+
+17086292
+
+4. Working with Files
+
+outputfile = []
+
+with open('Rosalind/input.txt', 'r') as f:
+    outputfile = [line for pos, line in enumerate(
+        f.readlines()) if pos % 2 != 0]
+    
+print(outputfile)
+['Some things in life are bad, they can really make you mad\n', 'Other things just make you swear and curse\n', "When you're chewing on life's gristle, don't grumble give a whistle\n", 'This will help things turn out for the best\n', 'Always look on the bright side of life\n', 'Always look on the right side of life\n', "If life seems jolly rotten, there's something you've forgotten\n", "And that's to laugh and smile and dance and sing\n", "When you're feeling in the dumps, don't be silly, chumps\n", "Just purse your lips and whistle, that's the thing\n", 'So, always look on the bright side of death\n', 'Just before you draw your terminal breath\n', "Life's a counterfeit and when you look at it\n", "Life's a laugh and death's the joke, it's true\n", "You see, it's all a show, keep them laughing as you go\n", 'Just remember the last laugh is on you\n', 'Always look on the bright side of life\n', 'And always look on the right side of life\n', 'Always look on the bright side of life\n', 'And always look on the right side of life\n']
+
+with open('Rosalind/out.txt', 'w') as f:
+    f.write(''.join([line for line in outputfile]))
