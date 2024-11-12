@@ -1,0 +1,41 @@
+def nucleotide_counter():
+    """ This function is for counting nucleotides in a DNA string (s) read from local file """
+    s = r"C:\Users\Student\Desktop\Josephine's stuff\Masters\Semester 1\SL50188 - Research Project 1B\Rosalind practice\rosalind_dna.txt"
+    #Above: Path for file provided as a raw string due to escape characters.
+    with open(s, 'r') as f: #Opens DNA file and assigns it to the variable f.
+        #File is closed automatically when using with.
+        file_content = f.read().strip() #Reads the entire file content without any leading/trailing whitespace characters (strip()) to the variable file_content
+    counter = {'A': 0, 'C': 0, 'G': 0, 'T': 0} #Dictionary created to store the count for each nucleotide.
+    for index in file_content: #Iterates each position (index) of the file string.
+        counter[index] += 1 #Increases the count for the current character at a given index (from the counter dictionary)
+    return " ".join(str(counter[index]) for index in counter)
+    #The function returns the string value of the index key for each nucleotide, joining the strings with a space delimiter.
+
+result = nucleotide_counter() #Assigning the function call (no arguments) to a variable
+print(result) #Printing the variable value.
+
+
+#~~~~~~~~~~ Alternative solution (Command line input) ~~~~~~~~~~~~~~~~~~~~#
+import sys
+def nucleotide_counter(s):
+    counter = {'A': 0, 'C': 0, 'G': 0, 'T': 0}
+    for index in s:
+        if index in counter:
+            counter[index] += 1
+    return " ".join(str(counter[index]) for index in counter)
+
+s = sys.stdin.read().strip() 
+    #stdin: Standard input stream (type in command line)
+    #.read().strip(): Read data from the input stream and remove any leading and trailing whitespace characters in the string.
+result = nucleotide_counter(s)
+print(result)
+
+#~~~~ Advancements ~~~~#
+  # Else statement for "if i in counter:" - Error handling.
+#e.g. 
+      else: 
+          print(f"Warning: Invalid character: {i} encountered at position {index_counter}.")
+      index_counter = += 1
+
+  # Provides additional check that the input is a valid character and provides the exact index position. 
+          
