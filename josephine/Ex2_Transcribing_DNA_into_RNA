@@ -1,0 +1,26 @@
+def rna_converter(): #Define new function.
+    """ This function converts a DNA string (t) to the corresponding RNA string (t) """
+    t = r"C:\Users\Student\Desktop\Josephine's stuff\Masters\Semester 1\SL50188 - Research Project 1B\Rosalind practice\rosalind_rna.txt"
+    with open(t, 'r') as f: #Opens DNA file and assigns it to the variable f.
+        dna_t = f.read().strip() #Reads the entire file content (DNA string) without any leading/trailing whitespace characters
+        rna_t = dna_t.replace("T", "U") #replace() returns a copy of the string where occurrences of a substring (T) are replaced with another substring (U)
+    #This is used to convert a DNA string to an RNA string.
+    return rna_t #Returns the converted DNA to RNA string.
+print(rna_converter()) #Function is call and output returned to the user. 
+
+
+#~~ Advancements ~~~#
+# I could avoid using string operations (i.e. replace()) and instead use characters to increase efficiency for larger strings
+#e.g. 
+import sys
+def transcribe_dna_to_rna(t):
+    rna_t = "" #Empty string assigned to a variable that will contain the RNA version of the original DNA string
+    for i in t: #Indexes through the DNA string (t)
+        if i == 'T': #If at an index position (i), the corresponding character is T
+            rna_t += 'U' #Replace that character at the index position with a U
+        else:
+            rna_t += i #If at the index position (i) the character is not T, append the character to the RNA string (rna_t)
+    return rna_t #Function returns the complete RNA string.
+
+t = sys.stdin.read().strip() #Stripping the standard input that is read in from the users command line.
+print(transcribe_dna_to_rna(t)) #Calls the function and prints output to the user.
