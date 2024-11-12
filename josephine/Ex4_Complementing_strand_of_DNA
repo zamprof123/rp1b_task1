@@ -1,1 +1,14 @@
+#~~~~~~ Solution - With enumerate() ~~~~~~~~#
+def sequence_complement(): #Define function.
+    file_path = r"C:\Users\Student\Desktop\Josephine's stuff\Masters\Semester 1\SL50188 - Research Project 1B\Rosalind practice\rosalind_revc.txt"
+    #Store file path to a variable
+    with open(file_path, 'r') as f: #Opens the file content and assigns the value to variable f
+        file_content = f.read().strip() #Reads file content(f) and removes white space characters
+    complement = {'A': 'T', 'C': 'G', 'G': 'C', 'T': 'A'} #Dictionary that maps each DNA base to the complementary base pairing
+    reverse_complement = [None]*len(file_content) #Creates list the length of the file (DNA sequence) but initially set to the value of None (empty)
+    #Resizing of the list is not required.
+    for i, base in enumerate(file_content[::-1]): #Iterates over the file content (original sequence) in reverse order [::-1], providing the index (i) and base at each iteration.
+        reverse_complement[i] = complement[base] #In this reverse sequence, its complement base from the dictionary (complement) is assigned to its corresponding index from the list (reverse_complement)
+    return ''.join(reverse_complement) #Function returns the complete reverse complement sequence string (reverse_complement)
+print(sequence_complement()) #Calls function and output printed to the user.
 
