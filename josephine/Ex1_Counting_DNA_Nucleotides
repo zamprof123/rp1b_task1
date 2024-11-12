@@ -1,7 +1,7 @@
 def nucleotide_counter():
     """ This function is for counting nucleotides in a DNA string (s) read from local file """
     s = r"rosalind_dna.txt"
-    #Above: Path for file provided as a raw string and assigned to a variable due to escape characters (less needed here)
+    #Above: Path for file provided as a raw string and assigned to a variable due to escape characters
     with open(s, 'r') as f: #Opens DNA file and assigns it to the variable f.
         #File is closed automatically when using with.
         file_content = f.read().strip() #Reads the entire file content without any leading/trailing whitespace characters (strip()) to the variable file_content
