@@ -1,0 +1,36 @@
+#~~~~~~~~~~~~ Solution ~~~~~~~~~~~~~~~~~~~~~~~~#
+def motif_finder(): #Define function.
+    file_path = r"rosalind_subs.txt"
+    #Above: Stores file path to a variable
+    with open(file_path, 'r') as f: #Opens the file content and assigns the value to variable f
+        s, t = f.read().splitlines() #Reads file content (f) and splits into lines.
+        #Note: There are only two lines, I just need to split them in this case.
+        #Unpack the lines into two variables (s holds the longer DNA sequence (first line), t holds the motif to be found (second line))
+    positions = [str(i+1) for i in range(len(s)-len(t) + 1) if s[i:i+len(t)] == t] #Provides the position of the motifs using list comprehension (***explanation provided below)
+    return ' '.join(positions) #The function returns the positions of the motifs separated by spaces as the delimiter
+print(motif_finder()) #Prints the output of the function to the user.
+
+#***List comprehension for identifying motifs#
+    #1. Create the list (position)
+    #2. "for i in range(len(s)-len(t)+1)": Iterates through position (i) in the range of the length of s (DNA sequence) minus the length of the t (motif) + 1 (Adjusting for the loop range)
+    #3. "if s[i+1+len(t)] == t: Checks that at each position, if the DNA sequence (s) from the current index (i) to the length of t (motif length) is equal to t (the motif)
+    #4. IF correct ==> str(i+1): If a motif is identified, the starting position index for this motif is appended to the list (positions)
+    # As Python uses zero-based indexing and DNA sequences use one-based indexing, we add 1 to convert this.
+
+
+#~~~~~~~~ Advancement - Non-overlapping motifs ~~~~~~~~~~~~~#
+#If you are looking for motifs with non-overlapping sequences (e.g. gene start/stop site), there is an alternative approach. 
+
+import re
+def non_overlapping_motif_finder():
+    file_path = r"C:\Users\Student\Desktop\Josephine's stuff\Masters\Semester 1\SL50188 - Research Project 1B\Rosalind practice\rosalind_subs.txt"
+    with open(file_path, 'r') as f:
+        lines = f.readlines()
+    t = lines[-1].strip() #Assigns last of the file content to variable t (motif sequence)
+    s = ''.join(line.strip() for line in lines[:-1]) #Assigns the file content minus last line to the variable s (DNA sequence)
+    #Above: Ensure that the delimiter is without any spaces/commas and stripped of white space characters
+    motif_positions = [] #Empty list
+    for match in re.finditer(t, s): #Iterates over matches and accesses their start and end indices
+        motif_positions.append(str(match.start()+1)) #Converts the start index (match.start()) of the motif to one-based indexing and appends to the list.
+    return ' '.join(motif_positions) #Function returns the appended motif positions separated by a space delimiter 
+print(non_overlapping_motif_finder()) #Calls the function and prints the output to the user.
