@@ -1,0 +1,67 @@
+  Question 1.1
+What is the genome of sample X?
+
+AGTA
+
+
+  Question 1.2
+How many SNPs apart are samples 1 and 2?
+
+0
+
+
+  Question 1.3
+Ref = AGTACTA
+
+Sample 1: 	3	TACT	T
+Sample 2: 	2	GTAC	G
+
+a) 	Sample 1: AGTA
+	Sample 2: AGTA
+b)	There are no differences between the 2 genomes
+c)	Deletion of a series of nucleotides can be represented by multiple VCFs. Deletion of TAC from the above reference could be represented by both the VCFs written above.
+
+
+  Question 1.4
+Ref =		 AGACTACTG
+Sample Y =	 AG- - -ACTG
+
+Which of these correctly represents sample Y with respect to the reference?
+
+2	GACT	G
+
+
+  Question 1.5
+Ref = AGTACTGT
+
+VCF1: 3	TACTG	TC
+
+VCF2: 3	TACT	T
+   	   7	G		C
+
+VCF3: 2	GTAC	G
+	   7	G		C
+
+Look at the 3 VCFs - can you compare their genomes?
+
+VCF1 genome = AGTCT
+VCF2 genome = AGTCT
+VCF3 genome = AGTCT
+
+All 3 VCFs share the same genome, however, the same genome results from 3 different routes.
+
+
+  Question 1.6
+Reference:	AGTCTTGACTACTACTACTGGG 
+Sample:		AGTCTTGACTACTACTGGG
+
+How many different VCF representations of the sample can you give?
+
+16	TACT	T
+16	TAC		T	+	19	TG     	G
+16	TA		T	+	18	CTG  	G
+16	T		G	+	17	ACTGG   G
+17	ACTG	G
+17	ACT		G	+	20	GG		G
+17	AC		G	+	19	TG	  	G
+17	A		G	+	18	CTGG	G
