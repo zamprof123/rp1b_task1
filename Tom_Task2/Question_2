@@ -1,0 +1,52 @@
+-- Commands --
+minimap2 -a -x sr NC_000962.3.fasta sample.1.reads1.fq.gz sample.1.reads2.fq.gz | samtools view -h -F 0x900 - | samtools sort -O bam > mapped_reads.bam
+
+bcftools mpileup -Ou -f NC_000962.3.fasta mapped_reads.bam | bcftools call -vc -Ov > variants_task2.vcf
+
+minimap2 -a -x sr NC_000962.3.fasta sample.2.reads1.fq.gz sample.2.reads2.fq.gz | samtools view -h -F 0x900 - | samtools sort -O bam > mapped_reads_2.bam
+
+bcftools mpileup -Ou -f NC_000962.3.fasta mapped_reads_2.bam | bcftools call -vc -Ov > variants_2_task2.vcf
+
+minimap2 -a -x sr NC_000962.3.fasta sample.3.reads1.fq.gz sample.3.reads2.fq.gz | samtools view -h -F 0x900 - | samtools sort -O bam > mapped_reads_3.bam
+
+bcftools mpileup -Ou -f NC_000962.3.fasta mapped_reads_3.bam | bcftools call -vc -Ov > variants_3_task2.vcf
+
+less -S variants_task2.vcf
+
+less -S variants_2_task2.vcf
+
+less -S variants_3_task2.vcf
+
+samtools index mapped_reads.bam
+
+samtools index mapped_reads_2.bam
+
+samtools index mapped_reads_3.bam
+
+samtools tview mapped_reads.bam NC_000962.3.fasta
+
+samtools tview mapped_reads_2.bam NC_000962.3.fasta
+
+samtools tview mapped_reads_3.bam NC_000962.3.fasta
+
+samtools depth -a mapped_reads.bam > depth.txt
+
+samtools depth -a mapped_reads_2.bam > depth_2.txt
+
+samtools depth -a mapped_reads_3.bam > depth_3.txt
+
+
+
+2.  Look at the VCFs; one of these samples looks different. Can you identify which one, and explain why you think it is different?
+
+Sample A is different to the rest. In sample a there is a region that is littered with indels (from 1,245,282 to 1,255,000). 
+The average read depth for sample A as a whole is 58.0, compared to 49.8 and 49.9 for samples B & C. 
+Furthermore, between bases, 1,245,282 and 1,255,000, the average read depth for the indel mutations is 96.4.
+
+
+
+3. What do you think could explain your observation?
+
+When sequencing the ‘indel’ region in sequence A, the DNA sample was likely contaminated with other DNA. 
+When viewing the BAM file, roughly half of the sequencing reads contain SNPs absent in the other reads.
+
