@@ -1,0 +1,21 @@
+bgzip -c variants1.vcf > BGvariants1.vcf.gz
+bgzip -c variants2.vcf > BGvariants2.vcf.gz
+bgzip -c variants3.vcf > BGvariants3.vcf.gz
+
+bcftools complains about stuff when you don't have them in the specific format it wants.
+
+yes you also have to index them
+
+bcftools index BGvariants1.vcf.gz
+bcftools index BGvariants2.vcf.gz
+bcftools index BGvariants3.vcf.gz 
+i'd try doing alot of this stuff in one line but i dont feel like breaking stuff.
+
+
+the INDELS seem to be high quality, i think its using the phred scale, all above 200 >> really REALLY high quality.
+i mean the question now is why they've occured.
+
+save to files for cross-examination
+bcftools stats BGvariants1.vcf.gz > VAR1STATS.txt
+bcftools stats BGvariants2.vcf.gz > VAR2STATS.txt
+bcftools stats BGvariants3.vcf.gz > VAR3STATS.txt
