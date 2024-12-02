@@ -16,17 +16,17 @@ Q4 . 2 GACT G correctly represents sample Y
 Q6.
  VCF’s possible:
 (Four ACT deletion)
- 7 GACT   G
-10 TACT  T
-13 TACT  T
-16 TACT  T
+ 7 GACT to  G
+10 TACT to T
+13 TACT to T
+16 TACT to T
 
 (Three CTA deletion)
-8 ACTA  A
-11 ACTA  A
-14 ACTA  A
+8 ACTA to A
+11 ACTA to A
+14 ACTA to A
 
 (Three TAC deletion)
-9 CTAC  C
-12 CTAC C
-15 CTAC C
+9 CTAC to C
+12 CTAC to C
+15 CTAC to C
