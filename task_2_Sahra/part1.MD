@@ -15,6 +15,7 @@ Q4 . 2 GACT G correctly represents sample Y
 
 Q6.
  VCF’s possible:
+
 (Four ACT deletion)
  7 GACT to  G
 10 TACT to T
