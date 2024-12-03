@@ -4,34 +4,27 @@ Sample 1 is different to sample 2 and 3 because sample 1 presents Indel mutation
 
 c) What do you think could explain this?
 
-Sample 1 shows unique variations at indel positions not found in Samples 2 and 3, though it also presents SNP mutations similar to the other samples. SNPs are more common than indels and generally result from chemical changes at the molecular level.
+Sample 1 exhibits unique indel variations absent in Samples 2 and 3, alongside SNP mutations similar to the other samples. These indels could represent structural mutations in the genome or artifacts caused by contamination. However, without knowing if these regions fall within coding sequences, the first step is to evaluate the reliability of the detected indels.
 
-SNPs occur at single base positions and are more common in genetically stable regions, typically under weak selective pressure. They arise through mechanisms such as replication errors, spontaneous mutations (e.g., deamination or oxidative damage), and environmental factors like UV radiation or chemical mutagens. Horizontal gene transfer (HGT) and stress-induced mutagenesis can also contribute by introducing mismatches or activating error-prone DNA polymerases. SNPs may also arise through natural selection, with advantageous mutations, such as those conferring antibiotic resistance, becoming fixed. These processes explain the SNP mutations in all three samples. 
+Indels and Their Potential Impact
+Indels—caused by mechanisms like replication slippage, DNA repair errors, transposon activity, or stress-induced events—can lead to significant genomic changes, particularly when affecting coding regions. Compared to SNPs, indels are more likely to disrupt gene function or genome stability due to larger structural changes. Since the coding status of these regions in Sample 1 is unknown, assessing the reliability of the variant calls is crucial before making further interpretations.
 
-But what about the indels in sample 1?
+Variant Calling Metrics
+The reliability of indels in Sample 1 was evaluated using metrics such as IDV, IMF, DP, VDB, and RPBZ:
 
-Indels (insertions or deletions of nucleotides) are typically caused by replication slippage, DNA repair mechanisms, transposon activity, or stress-induced errors. Compared to single nucleotide polymorphisms (SNPs), indels are generally more likely to cause significant changes to a genome's function. This is because indels can lead to larger structural alterations in the DNA sequence, potentially having broader and more impactful consequences on gene function and genome stability, especially when occurring in coding regions. However, in this case, we are uncertain about the location of the coding regions, so we cannot definitively determine whether the indels have caused significant changes to the sample’s genome.
+Indel Depth Value (IDV): Reflects the number of reads supporting an indel. The average IDV for Sample 1 was 46.9%, indicating moderate support. However, knowing the total reads for each indel is necessary to fully evaluate confidence.
+Indel Maximum Fraction (IMF): Expresses IDV as a fraction of total reads (DP). The average IMF of 48.8% offers further context but remains insufficient for definitive conclusions.
+Depth of Coverage (DP): Ranged between 80–120, suggesting high genome representation, though not necessarily validating variant authenticity.
+Variant Distance Bias (VDB): Aimed at identifying splice-site artifacts, only 20% of variants had a VDB score ≥0.5, suggesting potential reliability for these indels, while the rest might reflect splicing-related false positives.
+Read Position Bias Z-score (RPBZ): Measures sequencing biases. Values closer to 0 indicate higher confidence; however, 66% of indels showed significant deviation, indicating technical factors may compromise reliability.
+Overall, the metrics indicate that while some indels might be genuine, technical biases and low support for many variants raise doubts about their authenticity.
 
-The inferences drawn are based on the data provided by the variant calling commands used, focusing on the IDV, IMF, DP, VDB, and RPBZ for each indel in Sample 1.
+Potential Causes of Indels in Sample 1
+Alignment Issues: Short-read misalignment, especially in repetitive or ambiguous regions, could lead to spurious indel calls.
+Contamination: Splice-site artifacts detected in RNA sequencing may indicate contamination. Mycobacterium tuberculosis (M.tb) lacks introns and does not undergo RNA splicing, so splice-site artifacts likely stem from host cells or other contaminating organisms.
+Argument for Contamination
 
-Indel Depth Value (IDV) represents the maximum number of raw reads supporting each indel, reflecting how many sequencing reads align with the identified indel. A high IDV means greater support for the indel, increasing confidence in its presence. On average, the IDV was around 45-50% across all 50 indels identified. However, to fully assess whether this is a strong value, we would need to know the total number of reads for each indel.
+Splice-site artifacts in RNA-seq data arise from errors in detecting splicing events. Since M.tb’s genome lacks introns, it does not undergo RNA splicing, meaning any detected splice events likely originate from contaminating organisms (e.g., host cells or other bacteria). Further investigation is necessary to confirm contamination as a source.
 
-The next variant annotation, Indel Maximum Fraction (IMF), represents the maximum fraction of raw reads supporting the indel at a specific position. Calculating the average IMF across all indels provides more context for assessing the reliability of the indel calls than just looking at IDV alone. IMF expresses IDV as a fraction of the total reads (DP), adjusting for coverage depth, which is crucial for evaluating variant call accuracy. Higher IMF values indicate stronger support for the indel, suggesting greater confidence that the variant is real rather than a result of sequencing errors or contamination. On average, the IMF across all 50 indels in Sample 1 was approximately 50%. This value alone does not definitively confirm or refute the reliability of the indels but provides useful context.
-
-Depth of Coverage (DP) refers to the total number of sequencing reads that cover a specific position in the genome, indicating how well the position is represented in the sequencing data compared to a reference genome. A higher DP typically correlates with greater confidence in variant calling. In this case, the DP ranges from 80-120, suggesting high confidence in the data.
-
-VDB is the variant distance bias for filtering splice-site artifacts in RNA sequencing data which is caused by splicing events that can cause misleading results. Only 20% (10 out of 50) of the variants have a VDB score of 0.5 or higher, suggesting these are more likely to be genuine variants. Higher VDB values indicate a lower likelihood of splice-site artifacts, while the remaining 80% may be false positives caused by splicing. 
-
-Lastly, I examined the Read Position Bias Z-score (RPBZ), which results from a Mann-Whitney U-test assessing any bias in the position of reads supporting a variant. This can indicate sequencing errors or biases, such as alignment issues, that may affect variant accuracy. The closer the RPBZ value is to 0, the better. Essentially, RPBZ measures the influence of technical factors, like read alignment and sequencing methods, on the variant calling process. I've defined a significant deviation from zero as a value less than -0.5 or greater than 0.5. In Sample 1, 17 out of the 50 indels exceed this threshold. This means that only about 34% of the indels can be confidently considered genuine variant calls, while the remaining 66% may be influenced by technical factors.
-
-The analysis of the indels in Sample 1 presents mixed results. VDB and RPBZ suggest that many variants may not be genuine, with 20% likely real and 66% potentially influenced by technical biases. While Depth of Coverage (DP) indicates a wide spread of the genome, it does not necessarily support genuine variant calling. Indel Maximum Fraction (IMF) and Indel Depth Value (IDV) provide around 50% support, offering some context but not definitive confidence. Overall, technical factors raise concerns about the authenticity of many variants, though some annotations show moderate reliability.
-
-So back to the question. What could cause the indels occurring in sample 1.
-
-1.	Alignment Issues: The mapping of short reads to the reference genome can sometimes be inaccurate if the reads align to multiple regions of the genome or if there are repetitive regions in the genome.
-2.	The presence of splice-site artifacts in Mycobacterium tuberculosis (M.tb) RNA sequencing data could potentially indicate contamination, particularly if M.tb itself does not exhibit traditional splice-site events.
-
-Here is my argument for reason 2:
-Splice-site artifacts refer to errors in RNA sequencing (RNA-seq) data that occur due to the misinterpretation of splicing events. Mycobacterium tuberculosis (M.tb) does not have introns in its DNA genome, and therefore, it does not require traditional RNA splicing during transcription. Any splice-site events detected in RNA-seq data would not be due to M.tb's own transcriptional processes, but rather could be caused by contamination from other organisms (such as host cells or other bacteria) that do undergo RNA splicing. However, further investigation would need to be conducted to see if this is due to contamination.
-
-There is a chance of the indel mutations occurring because of replication slippage, DNA repair mechanisms, transposon activity, or stress-induced errors but the chances of this happening are less likely than errors in alignment or contamination because the variant annotations do not confidently support the reads behind due to actual mutations.
+Likelihood of Biological Causes
+Although replication slippage, DNA repair errors, transposon activity, or stress-induced mutations could explain the indels, these scenarios are less plausible given the weak support from variant annotations. The metrics more strongly point to alignment errors or contamination as the primary causes.
