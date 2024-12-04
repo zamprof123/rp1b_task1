@@ -4,13 +4,11 @@ import os
 import numpy as np
 import pandas as pd
 
-
 # =========== Open file as a pandas data frame =========== #
 
 def open_file(location):
     file = open(os.path.expanduser(location), "r")
     return pd.read_csv(file, sep="\t", header=None)
-
 
 # =========== Open .csv, then change column name and replace the old version located in the respective directory =========== #
 
