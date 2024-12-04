@@ -70,10 +70,17 @@ How many different VCF representations of the sample can you
 give?
 
 7 GACT G
+8 ACTA A
+9 CTAC C
 10 TACT T
+11 ACTA A
+12 CTAC C
 13 TACT T
+14 ACTA A
+15 CTAC C
 16 TACT T
+17 ACTA A
 
 You could generate a number of other redundant VCF entries if you were to start replacing the sections with more than one character:
 e.g 6 CGACT CG
-while technically valid, this sort of thing is functionally identical to the vcf entries mentioned prior so they will be ommited for the sake of brevity.
+This is perfectly valid and potentially something that would pop up in an actual vcf, but also paves the way for far too many varitants to mention, so these will be ommited for the sake of brevity.
