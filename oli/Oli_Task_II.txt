@@ -1,0 +1,46 @@
+1.1
+Ref: AGTGA
+Sample: AGTA
+1.2
+Ref: AGTTGA
+Sample 1: AGTGA
+Sample 2: AGTGA
+Sample 1 and 2 are 0 SNPs apart from each other
+1.3
+Ref: AGTACTA
+A
+Sample 1: AGTA
+Sample 2: AGTA
+B- there are no differences between the two sequences
+C- The two VCF profiles indicate that different positions in the sequence have been with VCF 1 indicating nucleotides 4-6 being lost and VCF2 indicating nucleotides 3-5 being lost. However their sequences show the genomes to be the exact same, indicating difference in alignment to reference due to computation/reads and not biology.
+1.4
+2 GACT G
+1.5
+Ref: AGTACTGT
+VCF1: AGTCT
+VCF2: AGTCT
+VCF3: AGTCT
+All 3 VCF profiles vary between each other, however their sequences are the exact same between each other, varying exactly the same in relation to the reference 
+1.6
+Ref: AGTCTTGACTACTACTACTGGG
+Sample: AGTCTTGACTACTACTGGG
+-	16 TACT  T
+-	13 TACT  T
+-	7  GACT  G
+-	10 TACT  T 
+-	8 ACTA A
+-	11 ACTA A
+-	14 ACTA A
+-	9 CTAC C
+-	12 CTAC C
+-	15 CTAC C
+
+2
+
+2. Look at the VCFs; one of these samples looks different. Can you identify which one, and explain why you think it is different?
+
+Sample 1 is most likely the most different looking sample as it contains 57 indels in a 9,718 bp regions (positions 1,245,282-1,255,000) compared to samples 2 and 3 which lack INDEL calls, all relative to the reference genome. However, the most important part is that this section is nested in a region which has roughly double the coverage of other regions within sample 1 genome, and even when compared to sample 2 and 3 genome coverages.
+
+3. What do you think could explain your observation?
+The double coverage could be explained by a large duplication event within Sample 1 genome, which when aligned to the reference would cause the two duplicate regions to be aligned to the single region within the reference. Whilst the indels likely are further divergence events of sample 1 genome from the reference and genomes 2 and 3. 
+The duplication likely allows for greater production of certain proteins, whilst the indels likely affect regulatory regions and proteins themselves, showing a roughly equal mix of single, double and triple nucleotide deletions (with single bp deletions being 3 events less common). Overall this may be a region containing an operon, regulon or be a chromosome interacting domain, reflecting the selective pressure changes sample 1 genome experienced compared to sample 2 and 3 genomes (including the reference). 
