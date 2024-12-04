@@ -1,0 +1,10 @@
+# Question 2b & 2c
+
+b. Look at the VCFs; one of these samples looks different. Can you identify which one, and explain why you think it is different?
+
+Sample 1 is different. Sample 2 & 3 only have SNPs, while sample 1 has a section of INDELS between positions 1,245,282 and 1,255,000. The coverage at the section is much higher than elsewhere in the genome, being at 97+ and sometime over 100. The typical coverage is around 40-60.
+
+c. What do you think could explain your observation?
+
+When mapping the mutations in the ~10kb region, so half of the reads agree with the reference genome at the positions while half indicate an INDEL. As the organism is haploid this could indicate a duplication of this region of the genome. 
+Since these changes are only constrained to a small portion of the genome it is unlikely to be a sampling of two organisms as one simultaneously as then the whole genome would likely disagree.

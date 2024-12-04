@@ -1,0 +1,169 @@
+# MAKE AND ENTER DIRECTORY
+
+mkdir task2
+cd task2
+
+
+# COPY FILES INTO TASK2 DIRECTORY
+cp ~/shared-team/task2q2/NC_000962.3.fa .
+cp ~/shared-team/task2q2/NC_000962.3.fa.fai .
+cp ~/shared-team/task2q2/sample.1.reads1.fq.gz .
+cp ~/shared-team/task2q2/sample.1.reads2.fq.gz .
+cp ~/shared-team/task2q2/sample.2.reads1.fq.gz .
+cp ~/shared-team/task2q2/sample.2.reads2.fq.gz .
+cp ~/shared-team/task2q2/sample.3.reads1.fq.gz .
+cp ~/shared-team/task2q2/sample.3.reads2.fq.gz .
+
+
+conda activate varcall
+
+
+
+# VARIANT CALL SAMPLE 1
+
+minimap2 -a -x sr NC_000962.3.fa sample.1.reads1.fq.gz sample.1.reads2.fq.gz  | samtools view -h -F 0x900 - | samtools sort -O bam > t2_mapped_reads.bam
+
+samtools flagstat t2_mapped_reads.bam 
+
+bcftools mpileup -Ou -f NC_000962.3.fa t2_mapped_reads.bam | bcftools call -vc -Ov > variants_1.vcf
+
+less -S variants_1.vcf 	
+
+samtools index t2_mapped_reads.bam 
+
+samtools tview t2_mapped_reads.bam NC_000962.3.fa
+
+samtools depth -a t2_mapped_reads.bam > depths_s1.txt
+
+less depths_s1.txt
+
+
+
+
+# CALL SAMPLE 2
+
+minimap2 -a -x sr NC_000962.3.fa sample.2.reads1.fq.gz sample.2.reads2.fq.gz  | samtools view -h -F 0x900 - | samtools sort -O bam > t2_mapped_reads_s2.bam
+
+
+
+
+# RENAME FILES SO EASIER TO READ
+mv t2_mapped_reads.bam s1_mapped_reads.bam
+mv t2_mapped_reads_s2.bam s2_mapped_reads.bam
+mv t2_mapped_reads.bam.bai s1_mapped_reads.bam.bai
+
+
+
+
+# CONT W/ SAMPLE 2 CALLING
+
+samtools flagstat s2_mapped_reads.bam
+
+bcftools mpileup -Ou -f NC_000962.3.fa s2_mapped_reads.bam | bcftools call -vc -Ov > variants_2.vcf
+
+less -S variants_2.vcf 
+
+samtools index s2_mapped_reads.bam 
+
+samtools tview s2_mapped_reads.bam NC_000962.3.fa
+
+samtools depth -a s2_mapped_reads.bam> depths_s2.txt
+
+
+
+
+# COPY .PY FILE TO TASK2 DIRECTORY SO I CAN GET COVERAGE
+
+cp ~/shared-team/wed20th_var/get_depths.py .
+
+python get_depths.py -i depths_s1.txt -o s1_coverage_1kb_means.bed
+
+
+
+
+# CALL SAMPLE 3
+
+minimap2 -a -x sr NC_000962.3.fa sample.3.reads1.fq.gz sample.3.reads2.fq.gz | samtools view  -h -F 0x900 - | samtools sort -O bam > s3_mapped_reads.bam
+
+samtools flagstat s3_mapped_reads.bam
+
+bcftools mpileup -Ou -f NC_000962.3.fa s3_mapped_reads.bam | bcftools call -vc -Ov > variants_s3.vcf
+
+less -S variants_s3.vcf 
+
+samtools index s3_mapped_reads.bam 
+
+samtools tview s3_mapped_reads.bam NC_000962.3.fa
+
+samtools depth -a s3_mapped_reads.bam > depths_s3.txt
+
+
+
+
+# GET COVERAGE FOR SAMPLE 3
+
+python get_depths.py -i depths_s3.txt -o S3_coverage_1kb_means.bed
+
+less s3_coverage_1kb_means.bed 
+
+
+
+# RENAME VARIANTS SO EASIER TO UNDERSTAND WHICH SAMPLE THEY'RE FROM
+
+mv variants_1.vcf variants_s1.vcf
+mv variants_2.vcf variants_s2.vcf
+
+
+
+
+# GET COVERAGE FOR SAMPLE 2
+
+python get_depths.py -i depths_s2.txt -o s2_coverage_1kb_means.bed
+
+
+
+# COMPARE GENOMES OF EACH VARIANT
+
+less -S varaint_s1.vcf
+less -S varaint_s2.vcf
+less -S varaint_s3.vcf
+
+
+
+# COMPARE COVERAGE OF EACH VARIANT
+
+less s1_coverage_1kb_means.bed
+less s2_coverage_1kb_means.bed
+less s3_coverage_1kb_means.bed
+
+
+
+
+# Variant 1 differs from others and has a strange amount of coverage at specific position.
+# look more closely at this position 
+
+samtools tview s1_mapped_reads.bam NC_000962.3.fa
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

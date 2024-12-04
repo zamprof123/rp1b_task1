@@ -1,0 +1,103 @@
+Q1.1 
+Ref   = AGTGA
+Here is the VCF of sample X
+3  TG  T
+
+What is the genome sample of X?
+AGTA
+
+Q1.2
+Ref   = AGTTGA
+VCF of sample 1
+2  GT  G
+VCF of sample 2
+3  TT  T
+
+How many SNPs apart are samples 1 & 2?
+
+Sample 1: AGTGA
+Sample 2: AGTGA
+They are zero SNPs apart. They have the same sequence.
+
+Q1.3
+ Ref   = AGTACTA
+ VCF of sample 1
+ 3  TACT  T          		AGT---A
+ VCF of sample 2
+ 2  GTAC  G			AG---TA
+
+a) Obtain the genome samples of samples 1 & 2. Tell me what they are.
+sample 1: AGTA
+sample 2: AGTA
+Both of the mutations are deletions
+
+b) Identify the differences between those two genomes
+There are no differences in the genomes. The alignment with the reference genome will be different
+VCF1: AGT---A
+VCF2: AG---TA
+
+c) Compare what you learn from b) with what you get from comparing VCFs above
+Different mutations can lead to the same sequence forming
+
+
+Q1.4
+Ref      = AGACTACTG
+Sample Y = AG---ACTG
+Which of these correctly represents sample Y with respect to the reference?
+
+2  GACT   G
+
+Q1.5
+Most of the time, you need multiple records to describe a sample.
+Let’s look at 3 VCFs (with respect to this reference: AGTACTGT). Can you compare their genomes?
+
+ VCF1
+ 3  TACTG   TC
+
+ VCF2
+ 3  TACT    T
+ 7  G       C
+
+ VCF3
+ 2  GTAC    G
+ 7  G       C
+
+VCF1: AGTCT
+VCF2: AGTCT
+VCF3: AGTCT
+
+Their genomes are the exact same
+
+Q1.6
+Reference AGTCTTGACTACTACTACTGGG
+Sample      AGTCTTGACTACTACTGGG
+How many different VCF representations of the sample can you give?
+
+VCF1: 7   GACT   G 			
+VCF2: 8   ACTA    A
+VCF3: 10  TACT   T
+VCF4: 11  ACTA  A
+VCF5: 13  TACT   T
+VCF6: 14 ACTA   A
+VCF7: 16  TACT   T
+
+VCF8:
+6   TGAC      T
+10   T             G
+
+VCF9:  
+9    CTAC    C
+
+VCF10:
+12  CTAC     C
+
+
+
+
+
+
+
+
+
+
+
