@@ -57,4 +57,4 @@ variants_1.vcf  variants_2.vcf  variants_3.vcf
 (varcall) jovyan:~/shared-team/wed20th_var$ cd /home/jovyan/task2_guille/task2q2/Bam_files
 (varcall) jovyan:~/task2_guille/task2q2/Bam_files$ python ~/shared-team/wed20th_var/get_depths.py -i depth_1.txt -o coverage_1_1kb_means.bed
 (varcall) jovyan:~/task2_guille/task2q2/Bam_files$ python ~/shared-team/wed20th_var/get_depths.py -i depth_2.txt -o coverage_2_1kb_means.bed
-(varcall) jovyan:~/task2_guille/task2q2/Bam_files$ python ~/shared-team/wed20th_var/get_depths.py -i depth_3.txt -o coverage_3_1kb_means.bed}
+(varcall) jovyan:~/task2_guille/task2q2/Bam_files$ python ~/shared-team/wed20th_var/get_depths.py -i depth_3.txt -o coverage_3_1kb_means.bed
