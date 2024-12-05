@@ -39,14 +39,11 @@ samtools depth -a mapped_reads_3.bam > depth_3.txt
 
 2.  Look at the VCFs; one of these samples looks different. Can you identify which one, and explain why you think it is different?
 
-Sample A is different to the rest. In sample a there is a region that is littered with indels (from 1,245,282 to 1,255,000). 
-The average read depth for sample A as a whole is 58.0, compared to 49.8 and 49.9 for samples B & C. 
-Furthermore, between bases, 1,245,282 and 1,255,000, the average read depth for the indel mutations is 96.4.
+Sample A is different to the rest. In sample a there is a region (from 1,245,282 to 1,255,000bp) with a significantly higher density of mutations than the anywhere else, including in the other 2 samples. 
 
 
 
 3. What do you think could explain your observation?
 
-When sequencing the ‘indel’ region in sequence A, the DNA sample was likely contaminated with other DNA. 
-When viewing the BAM file, roughly half of the sequencing reads contain SNPs absent in the other reads.
+The assembler misassembled reads containing repeat sections of DNA. The average read depth in this region in Sample A is 96.4, compared to 58.0 for the sample A as a whole (and 50.2 excluding the aforementioned region). Average read depths for B & C are 49.8 and 49.7 respectively. The repeat sections were piled up on top of each other by the assembler.
 
