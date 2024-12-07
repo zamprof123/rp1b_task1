@@ -1,0 +1,70 @@
+#~~~~~~~~ Task 2 ~~~~~~~~~~#
+#~ Question 1.1 ~#
+
+The genome of sample X is AGTA
+
+
+#~ Question 1.2 ~#
+
+Sample 1 has sequence variant at position 2, replacing "GT" in the reference with "G" in the alternative genome.
+The resulting sequence is AGTGA
+
+Sample 2 has sequence variants at position 3, replacing "TT" in the reference with "T" in the alternative genome. 
+The resulting sequence is AGTGA. 
+
+Hence, they are identical alternative genomes and are zero SNPs apart. 
+
+#~ Question 1.3 ~#
+
+a) 
+Sample 1 has sequence variant at position 3, replacing "TACT" in the reference with "T" in the alternative genome.
+The resulting sequence is AGTA
+
+Sample 2 has sequence variant at position 2, replacing "GTAC" in the reference with "G" in the alternative genome.
+The resulting sequence is AGTA
+
+Both are deletions.
+
+b) Sample 1 and 2 have identical genomes. 
+
+c) Importantly, although there are multiple VCFs that represent differences between the sample variants, inherently the sequences in sample 1 and 2 are the same. Different variant callers will result in record specific variant calls but not indicative of the final alternative genome sequence.
+
+#~ Question 1.4 ~#
+
+2 GACT G ==> Sequence variant at position 2, replacing "GACT" in the reference with "G" in the alternative ==> AGACTG
+3 ACTA A ==> Sequence variant at position 3, replacing "ACTA" in the reference with "A" in the alternative ==> AGACTG
+4 CTAC C ==> Sequence variant at position 4, replacing "CTAC" in the reference with "C" in the alternative ==> AGACTG
+5 TACT T ==> Sequence variant at position 2, replacing "GACT" in the reference with "G" in the alternative ==> AGACTG
+
+Answer: All of the variants represent the same Sample Y genome in respect to the reference. 
+
+#~ Question 1.5 ~#
+
+VCF 1: 3 TACTG TC ==> Sequence variant at position 3, replacing "TACTG" in the reference with "TC" in the alternative ==> Alt: AGTCT
+
+VCF 2: 
+3 TACT T ==> Sequence variant at position 3, replacing "TACT" in the reference with "T" in the alternative ==> Alt: AGTCT
+7 G C ==> Sequence variant at position 7, replacing "G" in the reference with "C" in the alternative 
+==> Alt: AGTACTCT
+
+VCF3:
+2 GTAC G ==> Sequence variant at position 2, replacing "GTAC" in the reference with "G" in the alternative ==> Alt: AGTCT
+7 GC G ==> Sequence variant at position 2, replacing "GTAC" in the reference with "G" in the alternative ==> Alt: AGTCT
+
+Answer: All VCFs, except possibly VCF1 (which may be a typo), represent the same variant calls relative to the reference genome for the given sample 
+
+#~ Question 1.6 ~#
+
+7 GACT G
+8 ACTA A
+12 CTAC C
+13 TACTACT TACT
+14 ACTAC AC
+15 CTAC C
+15 CTACTG 
+16 TACT T
+16 TACTGGG TGGG
+17 ACTG G
+17 ACTGGG GGG
+(Not exhaustive...)
+
