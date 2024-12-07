@@ -11,9 +11,18 @@ On CLIMB in this directory /home/jovyan/shared-team/task2q2, you will find fastq
 
 # ===================== #
 
-1. All mapped .vcf files pertaining to the genomes of all 3 samples were analysed on the CLIMB terminal, making use of variant calling-specific Unix tools (bcftools, minimap2, samtools and bedtools). Both fq.gz files specific to all three samples, were converted into .bam files and aligned against the reference genome. Following which variant files were attained, tabulating the direct alignment between each sample with the reference genome. Following up, .vcf files were converted into .csv files (See "Variant Files" folder) using Python to facilitate interpretability. Relevant code can be found under "Scripts/Bash Script Task2.sh“.
+1. All mapped .vcf files pertaining to the genomes of all 3 samples were analysed on the CLIMB terminal, making use of variant calling-specific Unix tools (bcftools, minimap2, samtools and bedtools). 
+Both fq.gz files specific to all three samples, were converted into .bam files and aligned against the reference genome. Following which variant files were attained, tabulating the direct alignment 
+between each sample with the reference genome. Following up, .vcf files were converted into .csv files (See "Variant Files" folder) using Python to facilitate interpretability. Relevant code can be 
+found under "Scripts/Bash Script Task2.sh“.
 
-2. Sample one is reflected as the altered genome. Despite the average coverage per 1kb between all three samples being non-significant (F = 1.25, P = 0.29, P !< 0.05) measured through a One-Way ANOVA, the region between positions p.1245282 and p.1255000 in sample one contains a total of 57 indels, contrary to sequences across the remaining samples, hence showcasing a discrepancy. To further emphasise this difference, the analysis conducted in Python indicated that all 57 indels in sample 1 had an individual depth (per 1 base position) of above 60.0. Furthermore, there appears to be an elevation in depth per base position among all 57 indels between p.1245282 and p.1255000, ranging from 76.0 to 114.0. To further strengthen these findings, a cluster of outliers can be perceived in Figure 1 (Sample 1), presenting a significantly elevated depth, outliers of which cannot be witnessed across scatterplots concerning samples 2 and 3, specific to Figures 2 and 3 respectively (See "Figures" folder), which given the position of the data points in Figure 1. Finally, average coverage within indel regions in sample 1 ranged between 91.275 and 106.097, showcasing a significant elevation. 
+2. Sample one is reflected as the altered genome. Despite the average coverage per 1kb between all three samples being non-significant (F = 1.25, P = 0.29, P !< 0.05) measured through a One-Way ANOVA, 
+the region between positions p.1245282 and p.1255000 in sample one contains a total of 57 indels, contrary to sequences across the remaining samples, hence showcasing a discrepancy. To further 
+emphasise this difference, the analysis conducted in Python indicated that all 57 indels in sample 1 had an individual depth (per 1 base position) of above 60.0. Furthermore, there appears to be an 
+elevation in depth per base position among all 57 indels between p.1245282 and p.1255000, ranging from 76.0 to 114.0. To further strengthen these findings, a cluster of outliers can be perceived in 
+Figure 1 (Sample 1), presenting a significantly elevated depth, outliers of which cannot be witnessed across scatterplots concerning samples 2 and 3, specific to Figures 2 and 3 respectively (See 
+"Figures" folder), which given the position of the data points in Figure 1. Finally, average coverage within indel regions in sample 1 ranged between 91.275 and 106.097, showcasing a significant 
+elevation. 
 
 Relevant code can be found under the "Scripts" folder:
 Scripts/Depth comparison across all samples.R
@@ -22,4 +31,7 @@ Scripts/RP1B Python Script.py
 
 
 3. What do you think could explain your observation?
-Two possibilities could explain this observation. Firstly, all positions in sample 1 which contain indels, have ~x2 times higher average depth per single base position when compared with samples 2 and 3, uniquely within the previously specified  10kb-wide region (p.1245282 to p.1255000). Given that the corresponding genome refers to a haploid species (Mycobacterium tuberculosis H37Rv), this could perhaps suggest the occurrence of gene duplication within the 10kb-wide region. However, this could also be due to contamination of sample 1 with respect to the remaining counterparts. As such, this could indicate possible gene duplication. However, although unlikely, sample contamination cannot be discarded.
+Two possibilities could explain this observation. Firstly, all positions in sample 1 which contain indels, have ~x2 times higher average depth per single base position when compared with samples 2 and 
+3, uniquely within the previously specified  10kb-wide region (p.1245282 to p.1255000). Given that the corresponding genome refers to a haploid species (Mycobacterium tuberculosis H37Rv), this could 
+perhaps suggest the occurrence of gene duplication within the 10kb-wide region. However, this could also be due to contamination of sample 1 with respect to the remaining counterparts. As such, this 
+could indicate possible gene duplication. However, although unlikely, sample contamination cannot be discarded.
