@@ -29,7 +29,7 @@ def vcf_to_csv(vcf_file_path, csv_file_path):
 
             return data
 
-# =========== Coverage files (3 E-coli samples) =========== #
+# =========== Coverage files (3 Mycobacterium tuberculosis H37Rv samples) =========== #
 
 coverage_sample1 = open_file("~/Desktop/(MSc) BIOINFORMATICS/MACHINE LEARNING RESEARCH PROJECT (1B)/task2/coverage_1kb_means.bed")
 coverage_sample2 = open_file("~/Desktop/(MSc) BIOINFORMATICS/MACHINE LEARNING RESEARCH PROJECT (1B)/task2/coverage_1kb_means_2.bed")
