@@ -1,0 +1,55 @@
+Q1.1 : AGTA
+
+Q1.2 : 0 SNPs part since they have the same genome AGTGA
+
+Q1.3 :
+
+a)
+   Sample_1: AGTA 
+   Sample_2: AGTA
+
+b) 
+   Sample_1: AGT---A  following the T base is an deletion of 3 bases (ACT)
+   Sample_2: AG---TA  following the G base is an deletion of 3 bases (TAC)
+
+c)      Ref: AGTACTA
+   Sample_1: AGT---A
+   Sample_2: AG---TA
+   
+   Both sample 1 and 2 's genomes have 3 bases of deletion but they are in different positions and in the end have the same genomes meaning different base mutations in separate samples could give the same sequence.
+
+Q1.4 : 2 GACT G
+
+Q1.5 :
+        Ref: AGTACTGT
+   Sample_1: AGT-C--T 
+   Sample_2: AGT---CT
+   Sample_3: AG---TCT
+
+They all have the same genome.
+
+Q1.6 : 
+
+There could be 10 variant representations of this sample genome.
+
+POS REF        ALT
+7   GACT	G
+8   ACTA	A 	
+9   CTAC        C
+10  TACT	T
+11  ACTA	A
+12  CTAC	C
+13  TACT	T
+14  ACTA	A
+15  CTAC  	C
+16  TACT	T	
+
+Q2 : 
+
+2.2 Sample 1 is different from the Reference genome since from the VCF file, there are some INDELs in sample 1 starting from position 1245282 with deletion of tg and other positions eg. pos1255000 insertion of an G etc. But INDEL is not happening in the other two samples' genomes(only SNPs).
+Besides, from the 1kb mean coverage outputs, the depth in this section is 2x higher in sample 1(90% - 107%) than the depth in the other two sample genomes(43% -58%).
+
+
+2.3
+
+Given that the reference genome is from M.tuberculosis which is a haploid, INDELs directly reflect difference from the reference genome, the INDELs and 2x coverage could suggest gene duplication or repetitive sequences.
