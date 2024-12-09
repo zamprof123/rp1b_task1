@@ -1,0 +1,27 @@
+TASK 2 (Research Project 1B)
+
+Question 2
+
+
+On CLIMB in this directory /home/jovyan/shared-team/task2q2, you will find fastq files for 3 samples and a reference genome. Your task is:
+
+1. Map the reads and call variants for all 3 samples. 
+2. Look at the VCFs; one of these samples looks different. Can you identify which one, and explain why you think it is different?
+3. What do you think could explain your observation?
+
+# ===================== #
+
+1. All mapped .vcf files pertaining to the genomes of all 3 samples were analysed on the CLIMB terminal, making use of variant calling-specific Unix tools (bcftools, minimap2, samtools and bedtools). Both fq.gz files specific to all three samples, were converted into .bam files and aligned against the reference genome. Following which variant files were attained, tabulating the direct alignment between each sample with the reference genome. Following up, .vcf files were converted into .csv files using Python to facilitate interpretability. Relevant code can be found under "Scripts/Bash Script Task2.sh“.
+
+
+2. Sample one is reflected as the altered genome, given the identification of 57 indels within a ~10kb region  (p.1245282 - p.1255000) contrary to the remaining samples. Furthermore, discrepancies were also found concerning depth (per 1 base) and average coverage per 1kb. All 57 indels revealed a depth value ranging from 76-114, hence being considerably above the mean (50.106) depth, specific to sample 1. As such, average coverage per 1kb within the indel-dominated region also appeared to be elevated, with values ranging from 91.275 and 106.097, between all 57 indels. To further strengthen previous findings, Figure 1 (Sample 1) shows a visual disparity showcasing a cluster of outliers falling under the previously mentioned ~10kb region, which cannot be witnessed among Figures 2 and 3, pertaining to the remaining two samples (See "Figures" folder).
+
+
+Relevant code can be found under the "Scripts" folder:
+Scripts/Depth comparison across all samples.R (Comparing depth from indel-containing positions in sample 1 vs samples 2 and 3) 
+Scripts/Depth csv formatting.py (Formating depth.txt files into CSV for analysis in Python)
+Scripts/RP1B Python Script.py (General data analysis script)
+
+
+3. What do you think could explain your observation?
+All indel-containing positions (p.1245282 to p.1255000) in sample 1 have ~x2 times higher average depth per single base position when compared with samples 2 and 3. Given the corresponding species (Mycobacterium tuberculosis H37Rv) being a haploid organism, it is likely that gene duplication could have occurred within the ~10kb-wide region. Nevertheless, although unlikely, sample contamination of the underlying genome for sample 1 cannot be discarded; however, if so, all the encountered discrepancies would likely have occurred on a genome-wide scale.
