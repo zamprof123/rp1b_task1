@@ -125,7 +125,7 @@ How many different VCF representations of the sample can you give?
 
 Answer:
 VCFs
-7       GACT	 G
+7       GACT	G
 8       ACTA    A 
 10      TACT    T
 11      ACTA    A
