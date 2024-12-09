@@ -23,7 +23,6 @@ mean (50.106) depth, specific to sample 1. As such, average coverage per 1kb wit
 106.097, between all 57 indels. To further strengthen previous findings, Figure 1 (Sample 1) shows a visual disparity showcasing a cluster of outliers falling under the previously 
 mentioned ~10kb region, which cannot be witnessed among Figures 2 and 3, pertaining to the remaining two samples (See "Figures" folder).
 
-
 Relevant code can be found under the "Scripts" folder:
 Scripts/Depth comparison across all samples.R (Comparing depth from indel-containing positions in sample 1 vs samples 2 and 3) 
 Scripts/Depth csv formatting.py (Formating depth.txt files into CSV for analysis in Python)
