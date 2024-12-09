@@ -129,11 +129,11 @@ VCFs
 16	TA 	T
 16 	TAC 	T
 16 	TACT 	T
-7  GACT  G
+7    GACT    G
 17 	A	G
 17	AC	G
 17	ACT	G
 17	ACTG	G
 17      ACTGG   G
-11  ACTACTA  A
+11    ACTACTA    A
 
