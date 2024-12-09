@@ -132,7 +132,7 @@ VCFs
 12  CTAC  C
 13  TACT  T
 14  ACTA  A
-15      CTAC     C
+15      CTAC    C
 16	T	G
 16	TA 	T
 16 	TAC 	T
