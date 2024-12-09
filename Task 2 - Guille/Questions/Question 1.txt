@@ -109,7 +109,7 @@ A G - - - - - T
 A G T - - - C T
 
 VCF 3 (2 GTAC G) &  (7 G C)
-Sequence ->AGTCT
+Sequence -> AGTCT
 A G T A C T G T
 A - - - - T – T
 A G - - - T C T
