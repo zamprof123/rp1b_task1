@@ -34,7 +34,7 @@ A G T T G A
 A G - - G A
 A G T – G A
 
-•A single nucleotide is deleted across both samples one (Thymine) and two (Cytosine) were identified. However, based on these findings, samples 1 and 2 are 0 SNPs apart, given that both sequences 
+•A single nucleotide deletion across both samples one (Thymine) and two (Cytosine) was identified. However, based on these findings, samples 1 and 2 are 0 SNPs apart, given that both sequences 
 are identical.
 
 # ===================== #
@@ -50,7 +50,7 @@ b) Identify the differences between those two genomes
 c) Compare what you learn from b) with what you get from comparing VCFs above
 
 Answer:
-a)Sequences (Sample 1) -> AGTA, (Sample 2) -> AGTA. Sample 1 is a deletion of 3 nucleotides (ACT) from the reference genome, starting at position 3. Sample 2 refers to a parallel deletion of 3 
+a)Sequences (Sample 1) -> AGTA, (Sample 2) -> AGTA. Sample 1 is a deletion of 3 nucleotides (ACT) from the reference genome, starting at position 3. Sample 2 refers to a deletion of 3 
 nucleotides (TAC) respective to the reference genome, starting at position 2.
 
 Sample 1:
@@ -63,8 +63,8 @@ A - - - - T A
 A G - - - T A
 
 b)There are no positional nucleotide differences between both genomes (0 SNPs apart).
-c)Despite null differences in overall nucleotide composition across both genomes (AGTA), they differ in how the reference genome was altered. This is due to sample 1-specific VCF deleting ATGA at 
-position 3, while the VCF concerning sample 2 suggests a deletion starting from position 3; however, both VCFs result in a 3-nucleotide-wide deletion.
+c)Despite null differences in overall nucleotide composition across both genomes (AGTA), they differ in how the reference genome was altered. This is due to sample 1-specific VCF deleting ACT at 
+position 3, while the VCF concerning sample 2 suggests a deletion of TAC starting from position 2; however, both VCFs result in a 3-nucleotide-wide deletion.
 
 # ===================== #
 
