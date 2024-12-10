@@ -51,7 +51,7 @@ c) Compare what you learn from b) with what you get from comparing VCFs above
 
 Answer:
 a)Sequences (Sample 1) -> AGTA, (Sample 2) -> AGTA. Sample 1 is a deletion of 3 nucleotides (ACT) from the reference genome, starting at position 3. Sample 2 refers to a deletion of 3 
-nucleotides (TAC) respective to the reference genome, starting at position 2.
+nucleotides (TAC) respective to the reference genome, starting at position 2. However, both genomes are exactly the same (AGTA).
 
 Sample 1:
 A G T A C T A
