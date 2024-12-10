@@ -27,6 +27,7 @@ Indel_position <- c(1245282, 1250728, 1245688, 1246270, 1246303, 1246787, 124685
                     1251694, 1253106, 1253502, 1253854, 1254033, 1254066, 1254357)
 
 # =========== Loop through all 3 tables and print depth at each position across 3 samples (gene duplication?)  =========== #
+# Printing depth at each position across all 3 samples, where an INDEL was found in sample 1
 
 for (position in Indel_position) {
   index1 <- which(df1$position == position)
