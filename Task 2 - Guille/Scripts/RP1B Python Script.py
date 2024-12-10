@@ -89,7 +89,7 @@ print(f"Maximum coverage_mean (file1): {max_coverage_mean}, Start: {start_pos}, 
 def plot_coverage(depth_file, plot_file=""):
 
     fig, ax = plt.subplots(figsize=(10, 6))
-    ax.plot(depth_file["start"], depth_file["coverage_mean"], marker='o', linestyle="", color="b")
+    ax.plot(depth_file["start"], depth_file["coverage_mean"], marker="o", linestyle="", color="b")
     ax.set_xlabel("Position (start of 1kbp bin)")
     ax.set_ylabel("Mean Depth")
     ax.set_title("Mean Depth of Coverage in 1kbp Bins")
