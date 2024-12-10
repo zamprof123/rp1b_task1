@@ -1,0 +1,60 @@
+Create conda environment:
+
+conda create -y -n newenv minimap2 samtools bcftools bedtools
+
+Activate conda environment:
+conda activate newenv
+
+Install:
+pip install pandas matplotlib
+
+
+#Code for sample 1:
+
+minimap2 -a -x sr NC_000962.3.fa sample.1.reads1.fq.gz sample.1.reads2.fq.gz | samtools view -h -F 0x900 - | samtools sort -O bam > mapped_reads1.bam
+
+samtools flagstat mapped_reads1.bam
+
+bcftools mpileup -Ou -f NC_000962.3.fa mapped_reads1.bam| bcftools call -vc -Ov > variants1.vcf
+
+less -S variants1.vcf
+
+samtools index mapped_reads1.bam
+
+samtools tview mapped_reads1.bam NC_000962.3.fa
+
+samtools depth -a mapped_reads.bam > depth1.txt
+
+
+
+#Code for sample 2:
+
+minimap2 -a -x sr NC_000962.3.fa sample.2.reads1.fq.gz sample.2.reads2.fq.gz | samtools view -h -F 0x900 - | samtools sort -O bam > mapped_reads2.bam
+
+samtools flagstat mapped_reads2.bam
+
+bcftools mpileup -Ou -f NC_000962.3.fa mapped_reads2.bam| bcftools call -vc -Ov > variants2.vcf
+
+less -S variants2.vcf
+
+samtools index mapped_reads2.bam
+
+samtools tview mapped_reads2.bam NC_000962.3.fa
+
+samtools depth -a mapped_reads.bam > depth2.txt
+
+#Code for sample 3:
+
+minimap2 -a -x sr NC_000962.3.fa sample.3.reads1.fq.gz sample.3.reads2.fq.gz | samtools view -h -F 0x900 - | samtools sort -O bam > mapped_reads3.bam
+
+samtools flagstat mapped_reads3.bam
+
+bcftools mpileup -Ou -f NC_000962.3.fa mapped_reads2.bam| bcftools call -vc -Ov > variants3.vcf
+
+less -S variants3.vcf
+
+samtools index mapped_reads3.bam
+
+samtools tview mapped_reads3.bam NC_000962.3.fa
+
+samtools depth -a mapped_reads.bam > depth3.txt

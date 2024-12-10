@@ -1,0 +1,102 @@
+Q1.1
+Ref: AGTGA
+Sample: 3  TG   T
+
+Ans:
+In the sample, we can see that at position 3 Guanine is deleted.
+So the genome of the sample will be >>> AGTA
+
+Q1.2
+Ans:
+Ref: AGTTGA
+VCF of sample 1: 2 GT G
+
+VCF of sample 2: 3 TT T
+Ans:
+In the VCF of sample 1 at position 2 the nucleotide thymine is deleted, while in sample 2 at position 3 thymine is deleted again which results in the genome
+>>>AGTGA 
+Since the genome of sample 1 and sample 2 are the same they are 0 SNP's apart.
+
+Q1.3
+Ref: AGTACTA
+VCF of sample 1: 3 TACT T
+
+VCF of sample 2: 2 GTAC G
+
+Ans:
+
+a) Genome of sample 1:>>>AGTA (Deletion of the sequence ACT at position 3 wrt T  )
+   Genome of sample 2:>>>AGTA (Deletion of the sequence TAC at position 2 wrt G )
+
+
+b) Even though the nucleotide sequence is deleted at different positions it results in the same genome for both samples, therefore there is no difference in the genome of sample 1 and sample 2.
+
+c) From comparing the VCFs of both samples we can see the exact position at which mutation has occurred and the nucleotide sequence that has been altered (Deletion in this case). For sample 1 the sequence ACT is deleted at position 3 while for sample 2 sequence TAC is deleted at position 2.
+
+Q1.4
+Ref : AGACTACTG
+Sample Y : AG---ACTG
+Which of these correctly represents sample Y with respect to the reference?
+Ans:
+2 GACT G
+
+Q1.5
+
+Ref: AGTACTGT
+
+
+Ans:
+VCF1: 3 TACTG TC
+
+VCF1 Genome: >>>AGTCT (Indel Mutation-> insertion and deletion at the same time.)
+
+VCF2: 3 TACT T
+      7 G C
+VCF2 Genome: >>>AGTGT>>>AGTCT (Deletion-> SNP)
+
+VCF3: 2 GTAC G
+      7 G C
+
+VCF3 Genome: >>>AGTGT>>>AGTCT(Deletion-> SNP)
+
+
+Even though samples 1, 2, and 3 undergo different kinds of mutations the genome for all the samples are the same.
+
+Q1.6
+
+Reference: AGTCTTGACTACTACTACTGGG
+
+Sample: AGTCTTGACTACTACTGGG
+
+
+The possible VCF representation are as follows:
+
+4 ACT Deletion:                                           
+>>>Pos  Ref   Alt
+   7    GACT   G
+   10   TACT   T
+   12   TACT   T
+   16   TACT   T
+
+
+3 CTA Deletion:
+>>>Pos  Ref   Alt
+   8    ACTA   A
+   11   ACTA   A
+   14   ACTA   A
+
+
+3 TCA Deletion:
+>>>Pos  Ref   Alt
+   9    CTAC   C
+   12   CTAC   C
+   15   CTAC   C
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,11 @@
+Q2.2
+Look at the VCFs; one of these samples looks different. Can you identify which one, and explain why you think it is different?
+
+Ans:
+Sample 1 is different from sample 2 and 3, because sample 2 and 3 exhibit only SNP mutation whereas sample 1 exhibits INDEL mutations along with SNPs from region (1245282~1255000). 
+
+
+Q2.3
+What do you think could explain your observation?
+Ans:
+Since the Indel mutation takes place at a smaller region of less than ~10kb it could indicate gene duplication within that particular region . Therefore when called against the reference genome sample 1 had higher average depth value when compared to sample 2 and sample 3. This might be the reason for Indel mutation
