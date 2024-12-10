@@ -17,7 +17,7 @@ print(paste("The average depth for depth_2.csv is:", mean_depth2))
 print(paste("The average depth for depth_3.csv is:", mean_depth3))
 
 
-# =========== Identified indel positions in sample 1  =========== #
+# =========== Identified INDEL positions in sample 1  =========== #
 
 Indel_position <- c(1245282, 1250728, 1245688, 1246270, 1246303, 1246787, 1246855, 
                     1251945, 1246874, 1247160, 1253892, 1254961, 1247083, 1247664, 
