@@ -25,6 +25,8 @@ print(f"shape: {np.shape(depth_file1), np.shape(depth_file2), np.shape(depth_fil
 print(f"headers: {depth_file1.head()}")
 print(depth_file1)
 
+# =========== Formatting previous .csv files by add relevant column names to facilitate analyses on the main Python script =========== #
+
 output_path1 = ("~/Desktop/(MSc) BIOINFORMATICS/MACHINE LEARNING RESEARCH PROJECT (1B)/task2/Depth and Coverage/depth_1.csv")
 output_path2 = ("~/Desktop/(MSc) BIOINFORMATICS/MACHINE LEARNING RESEARCH PROJECT (1B)/task2/Depth and Coverage/depth_2.csv")
 output_path3 = ("~/Desktop/(MSc) BIOINFORMATICS/MACHINE LEARNING RESEARCH PROJECT (1B)/task2/Depth and Coverage/depth_3.csv")
