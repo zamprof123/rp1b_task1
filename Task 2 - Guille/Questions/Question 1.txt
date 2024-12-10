@@ -35,8 +35,7 @@ A G - - G A
 A G T – G A
 
 •A single nucleotide is deleted across both samples one (Thymine) and two (Cytosine) were identified. However, based on these findings, samples 1 and 2 are 0 SNPs apart, given that both sequences 
-are 
-identical.
+are identical.
 
 # ===================== #
 
