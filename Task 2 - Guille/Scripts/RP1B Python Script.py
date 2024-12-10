@@ -217,11 +217,11 @@ print(f"INDEL to Depth dictionary: {indel_to_depth}") # Each INDEL mapped to itÂ
 print(f"INDEL coverage means: {coverage_indels}") # 9718 bases - ~10kb but not really - so output = 9 values
 print(f"Min and max depth per 1kb values within INDELs: {min(coverage_indels), max(coverage_indels)}") # (91.275, 106.097)
 
-
 # =========== Supplementary code (not really relevant) =========== #
 # Computation of One-Way ANOVA f_oneway (Same independent variable - "depth" across > 2 dependent variables)
 # Just for fun - we need statistical validation
 # Check the VCF file = correct by not mapping the same bp
+
 anova_result = f_oneway(coverage_mean_to_list(coverage_sample1), coverage_mean_to_list(coverage_sample2), coverage_mean_to_list(coverage_sample3))
 
 alignment_counter = 0
