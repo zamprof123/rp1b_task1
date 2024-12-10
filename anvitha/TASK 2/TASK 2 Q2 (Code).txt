@@ -23,7 +23,7 @@ samtools index mapped_reads1.bam
 
 samtools tview mapped_reads1.bam NC_000962.3.fa
 
-samtools depth -a mapped_reads.bam > depth1.txt
+samtools depth -a mapped_reads1.bam > depth1.txt
 
 
 
@@ -41,7 +41,7 @@ samtools index mapped_reads2.bam
 
 samtools tview mapped_reads2.bam NC_000962.3.fa
 
-samtools depth -a mapped_reads.bam > depth2.txt
+samtools depth -a mapped_reads2.bam > depth2.txt
 
 #Code for sample 3:
 
@@ -57,4 +57,4 @@ samtools index mapped_reads3.bam
 
 samtools tview mapped_reads3.bam NC_000962.3.fa
 
-samtools depth -a mapped_reads.bam > depth3.txt
+samtools depth -a mapped_reads3.bam > depth3.txt
