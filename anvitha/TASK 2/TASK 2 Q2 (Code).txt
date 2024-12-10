@@ -1,11 +1,13 @@
-Create conda environment:
+
+Copy the sample files and reference files from the shared directory.
+#Create conda environment:
 
 conda create -y -n newenv minimap2 samtools bcftools bedtools
 
-Activate conda environment:
+#Activate conda environment:
 conda activate newenv
 
-Install:
+#Install:
 pip install pandas matplotlib
 
 
