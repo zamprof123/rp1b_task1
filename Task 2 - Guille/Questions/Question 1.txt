@@ -84,8 +84,8 @@ Correct VCF -> 2 GACT G
 # ===================== #
 
 Q.1.5 
-Most of the time, you need multiple records to describe a sample. Let’s look at 3 VCFs (with respect
-to this reference: AGTACTGT). Can you compare their genomes?
+Most of the time, you need multiple records to describe a sample. Let’s look at 3 VCFs (with respectto this reference: AGTACTGT). Can you compare their genomes?
+
 VCF1
 3 TACTG TC
 VCF2
