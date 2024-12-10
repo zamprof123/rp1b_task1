@@ -19,7 +19,7 @@ interpretability. Relevant code can be found under "Scripts/Bash Script Task2.sh
 
 2. Sample one is reflected as the altered genome, given the identification of 57 INDELs within a ~10kb region  (p.1245282 - p.1255000) contrary to the remaining samples. Furthermore, 
 discrepancies were also found concerning depth (per 1 base) and average coverage per 1kb. All 57 INDELs revealed a depth value ranging from 76-114, hence being considerably above the 
-mean (50.106) depth, specific to sample 1. As such, average coverage per 1kb within the INDEL-dominated region also appeared to be elevated, with values ranging from 91.275 to 
+mean (50.106) depth, specific to sample 1. As such, average coverage per 1kb within the INDEL-dominated region also appeared to be elevated, with values ranging from 91.275x to 
 106.097x (mean = 99.042x), between all 57 INDELs. To further strengthen previous findings, Figure 1 (Sample 1) shows a visual disparity showcasing a cluster of outliers falling under the previously 
 mentioned ~10kb region, which cannot be witnessed among Figures 2 and 3, pertaining to the remaining two samples (See "Figures" folder).
 
