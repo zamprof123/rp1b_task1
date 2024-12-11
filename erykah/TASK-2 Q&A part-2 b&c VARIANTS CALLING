@@ -1,0 +1,10 @@
+TASK-2 part-2 b&c Q&A
+
+ANSWER 2b
+
+With respect to the reference genome sequence, sample 1 is different from sample 2 & 3. Sample 1 shows INDELs as well as SNPs mutations in certain region of the genomic sequence, while, samples 2 & 3 shows only SNPs mutations.
+
+ANSWER 2c
+
+INDEL mutations caused here is likely due to environmental factors or contamination, causing this genetic variation in sample 1. Sample 1 had higher average depth values many smaller regions in the genomic sequence when compared to samples 2 and 3, with respect to their reference genome sequence.
+This depth value stood out more in sample 1, causing it to have indel mutations.
