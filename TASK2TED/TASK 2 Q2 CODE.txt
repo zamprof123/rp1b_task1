@@ -5,6 +5,8 @@ minimap2 -a -x sr NC_000962.3.fa sample.1.reads1.fq.gz sample.1.reads2.fq.gz | s
 minimap2 -a -x sr NC_000962.3.fa sample.2.reads1.fq.gz sample.2.reads2.fq.gz | samtools view -h -F 0x900 - | samtools sort -O bam -o sample2.bam
 minimap2 -a -x sr NC_000962.3.fa sample.3.reads1.fq.gz sample.3.reads2.fq.gz | samtools view -h -F 0x900 - | samtools sort -O bam -o sample3.bam
 
+(FLAGSTAT: etc samtools flagstat sample1.bam, done for each sample bam file, just to make sure nothing went wrong)
+
 VARIANT CALLING.
 bcftools mpileup -Ou -f NC_000962.3.fa sample1.bam | bcftools call -vc -Ov > variants1.vcf
 bcftools mpileup -Ou -f NC_000962.3.fa sample2.bam | bcftools call -vc -Ov > variants2.vcf
