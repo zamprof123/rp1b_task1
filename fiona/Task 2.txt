@@ -1,0 +1,160 @@
+Q1(1.1) Ref = AGTGA
+                       
+ Position  Ref  Alt  
+   3       TG    T
+
+Here, G is deleted in position 3 giving the genome AGTA. 
+
+Q1(1.2) Ref = AGTTGA
+
+VCF of sample 1 
+Position  Ref  Alt 
+  2       GT    G
+
+VCF of sample 2 
+Position  Ref  Alt 
+  3       TT    T
+
+The genome is AGTGA for both the samples. Therefore, they are 0 SNPs apart because, the sequences of both the genomes are same even after deletion in sample 1 and 2. 
+
+Q1(1.3) Ref = AGTACTA
+
+VCF of sample 1 
+Position  Ref   Alt  
+  3       TACT   T
+
+The genome after deletion of ACT is AGTA.
+
+VCF of sample 2 
+Position  Ref   Alt 
+  2       GTAC   G
+
+The genome after the deletion of TAC is AGTA. 
+
+a) The genomes obtained in sample 1 and 2 are AGTA, because of deletion.  
+b) There is no difference in the genome we get even though ACT at position 3 and TAC at position 2 gets deleted in both the samples. No other difference other than the change of positions in each of the samples.
+c) From b, it is understood that, the reference genome given is AGTACTA, and the deletion of ACT from the position of 3 in sample 1, and the deletion of TAC from the position of 2 in sample 2 resulted in giving the same genome (AGTA) for both the samples. 
+
+Q1(1.4) The correct answer is,
+        
+        Position  Ref   Alt 
+          2       GACT   G
+
+Q1(1.5) VCF1
+        Position  Ref     Alt  
+          3       TACTG   TC
+ 
+VCF1 genome is AGTCT. Insertion and deletion at the same time- INDEL MUTATION.
+
+VCF2 
+Position  Ref    Alt 
+  3       TACT   T
+
+Genome: AGTGT. DELETION, SNP 
+
+Position  Ref   Alt 
+   7      G     C 
+
+Genome: AGTCT. DELETION, SNP 
+
+VCF3 
+Position  Ref    Alt 
+  2       GTAC   G
+
+Genome: AGTGT  
+
+Position  Ref  Alt 
+  7       G    C
+
+Genome: AGTCT. DELETION, SNP
+
+The samples show different mutations, but the genomes obtained are same for all.
+
+Q1(1.6) The VCF representations are:
+
+Reference AGTCTTGACTACTACTACTGGG
+Sample AGTCTTGACTACTACTGGG
+
+3 CTA Deletion 
+  
+  Position  Ref    Alt 
+    8       ACTA    A
+    11      ACTA    A
+    14      ACTA    A
+
+4 ACT Deletion
+
+Position    Ref    Alt
+  7         GACT    G
+  10        TACT    T
+  12        TACT    T
+  16        TACT    T
+
+3 TAC Deletion 
+ 
+Position   Ref     Alt
+  9        CTAC     C
+  12       CTAC     C
+  15       CTAC     C
+
+Q2(2.1) SAMPLE 1 
+
+conda activate zamtool
+
+pip install pandas matplotlib
+
+minimap2 -a -x sr NC_000962.3.fa sample.1.reads1.fq.gz sample.1.reads2.fq.gz | samtools view -h -F 0x900 - | samtools sort -O bam > mapped_reads1.bam
+
+samtools flagstat mapped_reads1.bam 
+
+bcftools mpileup -Ou -f NC_000962.3.fa mapped_reads1.bam | bcftools call -vc -Ov > variants1.vcf
+
+less -S variants1.vcf
+
+samtools index mapped_reads1.bam
+
+samtools tview mapped_reads1.bam NC_000962.3.fa
+
+SAMPLE 2 
+
+conda activate zamtool
+
+pip install pandas matplotlib
+
+minimap2 -a -x sr NC_000962.3.fa sample.2.reads1.fq.gz sample.2.reads2.fq.gz | samtools view -h -F 0x900 - | samtools sort -O bam > mapped_reads2.bam
+
+samtools flagstat mapped_reads2.bam 
+
+bcftools mpileup -Ou -f NC_000962.3.fa mapped_reads2.bam | bcftools call -vc -Ov > variants2.vcf
+
+less -S variants2.vcf
+
+samtools index mapped_reads2.bam
+
+samtools tview mapped_reads2.bam NC_000962.3.fa
+
+SAMPLE 3
+
+conda activate zamtool
+
+pip install pandas matplotlib
+
+minimap2 -a -x sr NC_000962.3.fa sample.3.reads1.fq.gz sample.3.reads2.fq.gz | samtools view -h -F 0x900 - | samtools sort -O bam > mapped_reads3.bam
+
+samtools flagstat mapped_reads3.bam 
+
+bcftools mpileup -Ou -f NC_000962.3.fa mapped_reads3.bam | bcftools call -vc -Ov > variants3.vcf
+
+less -S variants3.vcf
+
+samtools index mapped_reads3.bam
+
+samtools tview mapped_reads3.bam NC_000962.3.fa. 
+
+Q2(2.2) The difference noticed is that sample 1 exhibits INDEL mutations with SNPs at the regions(1245282~1255000). While sample 2 and sample 3 shows only SNP mutations in majority of the regions.  
+
+Q2(2.3) 
+
+
+
+
