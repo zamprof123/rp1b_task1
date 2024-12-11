@@ -1,13 +1,14 @@
-Q1. AGTA
+Q1. AGTA is the genome of sample X
  
-Q2. Sample 1 and 2 are zero SNPs apart.
+Q2. Sample 1 and 2 are zero SNPs apart. Even though there are indels at different positions, the final sequence for both samples are the same (AGTGA).
  
 Q3a.AGTA
-Sample 1: AGT - - - A
-Sample 2: AG - - - TA
+Sample 1: AGT - - - A :  AGTA
+Sample 2: AG - - - TA : AGTA
 
 Q3b.
 They produce the same sequence but have SNP mutations at different locations. So they are zero SNPs apart.
+
 Q3c. Although the VCFs of samples 1 and 2 indicate deletions occurring at different positions relative to the reference genome, they produce the same sequence of AGTA. Therefore, they are zero SNP mutations apart. The differences occur specifically at position 3, where Sample 1 has T and Sample 2 has a deletion, and position 6, where Sample 2 has T and Sample 1 has a deletion.
 
 Q4 . 2 GACT G correctly represents sample Y
