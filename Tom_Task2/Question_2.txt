@@ -35,6 +35,8 @@ samtools depth -a mapped_reads_2.bam > depth_2.txt
 
 samtools depth -a mapped_reads_3.bam > depth_3.txt
 
+#depth files then downloaded locally and passed through supplementary python script to calculate average depth
+
 
 
 2.  Look at the VCFs; one of these samples looks different. Can you identify which one, and explain why you think it is different?
