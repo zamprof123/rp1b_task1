@@ -52,4 +52,6 @@ Hit g to go to a specific position
 
 ? for information
 
+Generate depth reads using:
 samtools depth -a mapped_reads.bam > depth.txt
+python ~/shared-team/wed20th_var/get_depths.py -i depth.txt -o coverage_1kb_means.bed
