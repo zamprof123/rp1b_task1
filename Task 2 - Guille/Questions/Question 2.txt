@@ -30,7 +30,7 @@ Scripts/RP1B Python Script.py (General data analysis script)
 
 
 3. What do you think could explain your observation?
-All INDEL-containing positions (p.1245282 to p.1255000) in sample 1 have ~x2 times higher average depth per single base position when compared with samples 2 and 3. Given the 
+All INDEL-containing positions (p.1245282 to p.1255000) in sample 1 have ~x2 times higher average depth per single base position and coverage (per 1kb) when compared with samples 2 and 3. Given the 
 corresponding species (Mycobacterium tuberculosis H37Rv) being a haploid organism, it is likely that gene duplication could have occurred within the ~10kb-wide region. Nevertheless, 
 although unlikely, sample contamination of the underlying genome for sample 1 cannot be discarded; however, if so, all the encountered discrepancies would likely have occurred on a 
 genome-wide scale.
