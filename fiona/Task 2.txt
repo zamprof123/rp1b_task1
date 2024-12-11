@@ -153,7 +153,7 @@ samtools tview mapped_reads3.bam NC_000962.3.fa.
 
 Q2(2.2) The difference noticed is that sample 1 exhibits INDEL mutations with SNPs at the regions(1245282~1255000). While sample 2 and sample 3 shows only SNP mutations in majority of the regions.  
 
-Q2(2.3) 
+Q2(2.3) Some of the reasons are contamination in samples, environmental factors, stress induced mutation. Also indel mutation could recommend gene duplication within smaller regions. Sample 1 had higher average depth value than sample 2 and sample 3 against the reference genome. This could be another reason for the Indel mutation. 
 
 
 
