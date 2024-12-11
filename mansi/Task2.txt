@@ -1,0 +1,93 @@
+Task 2 Question 1.1
+Answer AGTA
+
+Question 1.2
+Answer samples 1 and 2 are 2 SNPs apart
+
+Question 1.3
+a) AGTA, AGTA
+b) There are no differences in their final sequences. Sample 1 modifies Position 3 by removing ACT and sample 2 modifies Position 2 by removing TAC.
+c)Both Sample 1 and Sample 2 resolve to the same final genome: AGTA. The two samples are 2 SNPs apart, corresponding to the unique changes at position 2 (Sample 2) and position 5 (Sample 1).
+
+Question 1.4
+Answer   3  ACTA  A
+
+Question 1.5
+VCF1 genome =  AGTCT
+
+VCF2 genome =  AGTCT
+
+VCF3 genome =  AGTCT
+
+VCF1: Uses a single change at position 3, replacing TACTG with with TC
+
+VCF2: Uses two changes - at position 3 replacing TACT with T, and at position 7 replacing G with C
+
+VCF3: Uses two changes - at position 2 replacing GTAC with G, and at position 7 replacing G with C
+
+
+Question 1.6
+Answer 
+13 TACTACT TACT
+14 ACTACT ACT
+15 CTACT CT
+16 TACT T
+17 ACTG G
+
+
+Task 2 Question 2
+
+a) Commands for mapping the reads and calling the variants for 3 samples.
+
+mkdir task2
+cd mansi/task2
+
+cp ~/shared-team/task2q2/NC_000962.3.fa .
+cp ~/shared-team/task2q2/NC_000962.3.fai .
+cp ~/shared-team/task2q2/sample.1.reads1.fq.gz .
+cp ~/shared-team/task2q2/sample.1.reads2.fq.gz .
+cp ~/shared-team/task2q2/sample.2.reads1.fq.gz .
+cp ~/shared-team/task2q2/sample.2.reads2.fq.gz .
+cp ~/shared-team/task2q2/sample.3.reads1.fq.gz .
+cp ~/shared-team/task2q2/sample.3.reads2.fq.gz .
+
+minimap2 -a -x sr NC_000962.3.fa sample.1.reads1.fq.gz  sample.1.reads2.fq.gz | samtools view -h -F 0x900 - | samtools sort -O bam > mapped_reads1.bam
+
+samtools flagstat mapped_reads1.bam
+
+minimap2 -a -x sr NC_000962.3.fa sample.2.reads1.fq.gz  sample.2.reads2.fq.gz | samtools view -h -F 0x900 - | samtools sort -O bam > mapped_reads2.bam
+
+samtools flagstat mapped_reads2.bam
+
+minimap2 -a -x sr NC_000962.3.fa sample.3.reads1.fq.gz  sample.3.reads2.fq.gz | samtools view -h -F 0x900 - | samtools sort -O bam > mapped_reads3.bam
+
+samtools flagstat mapped_reads3.bam
+
+bcftools mpileup -Ou -f NC_000962.3.fa mapped_reads1.bam | bcftools call -vc -Ov > variants1.vcf
+
+bcftools mpileup -Ou -f NC_000962.3.fa mapped_reads1.bam | bcftools call -vc -Ov > variants2.vcf
+
+bcftools mpileup -Ou -f NC_000962.3.fa mapped_reads1.bam | bcftools call -vc -Ov > variants3.vcf
+
+less -S variants1.vcf
+
+less -S variants2.vcf
+
+less -S variants3.vcf
+
+samtools index mapped_reads1.bam
+samtools tview mapped_reads1.bam NC_000962.3.fa
+
+samtools index mapped_reads2.bam
+samtools tview mapped_reads2.bam NC_000962.3.fa
+
+samtools index mapped_reads3.bam
+samtools tview mapped_reads3.bam NC_000962.3.fa
+
+samtools depth -a mapped_reads1.bam > depth1.txt
+samtools depth -a mapped_reads2.bam > depth2.txt
+samtools depth -a mapped_reads3.bam > depth3.txt
+
+b) Sample 1 appears different from Samples 2 and 3 because of different VCF representations and sequencing coverage variations.
+c)The lack of immediate space/depth after the first SNP in Sample 1's TV view versus Samples 2 and 3 is because different VCF representations can achieve the same final sequence in different ways.
+  The difference in depth numbers (70 in Sample 1 vs 40 in Samples 2 and 3) around their respective SNPs (3406, 775, and 4555) is likely due to variations in sequencing coverage at those specific positions.
