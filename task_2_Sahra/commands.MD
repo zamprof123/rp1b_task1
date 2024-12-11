@@ -49,4 +49,7 @@ samtools tview mapped_reads2.bam NC_000962.3.fasta
 samtools tview mapped_reads3.bam NC_000962.3.fasta
 
 Hit g to go to a specific position
+
 ? for information
+
+samtools depth -a mapped_reads.bam > depth.txt
